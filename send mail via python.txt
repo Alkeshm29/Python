@@ -1,0 +1,20 @@
+import smtplib
+fromaddr = 'thegreatalkesh@gmail.com'
+toaddrs  = 'alkeshm29@gmail.com'
+# msg = 'HIi Alk!'
+
+msg = "\r\n".join([
+  "From: thegreatalkesh@gthegreatalkesh.com",
+  "To: alkeshm29@gmail.com",
+  "Subject: By Bot",
+  "",
+  "Hiii Alk"
+  ])
+username = 'thegreatalkesh@gmail.com'
+password = 'thegreatalkesh'
+server = smtplib.SMTP('smtp.gmail.com:587')
+server.ehlo()
+server.starttls()
+server.login(username,password)
+server.sendmail(fromaddr, toaddrs, msg)
+server.quit()
